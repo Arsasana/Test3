@@ -5,7 +5,6 @@ resources:
 
 trigger:
 - master
-environment: env1
 stages:
  - stage: ProduceArtifact
    jobs:
