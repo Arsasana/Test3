@@ -7,9 +7,6 @@ resources:
         include:
         - master
         - dev
-
-trigger:
-- master
 stages:
  - stage: ProduceArtifact
    jobs:
