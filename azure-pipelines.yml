@@ -2,11 +2,8 @@ resources:
  pipelines:
    - pipeline: P1
      source: Arsasana.Test2
-     trigger:
-      branches:
-        include:
-        - master
-        - dev
+     trigger: true
+      
 stages:
  - stage: ProduceArtifact
    jobs:
