@@ -8,7 +8,7 @@ resources:
 
 
 stages:
- - stage: ProduceAnd ConsumeArtifact
+ - stage: ProduceAndConsumeArtifact
    jobs:
      - job: J8
        pool: 
