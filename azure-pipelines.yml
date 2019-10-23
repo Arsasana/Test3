@@ -1,18 +1,21 @@
 resources:
  pipelines:
-   - pipeline: P1
-     source: Arsasana.Test2
-     trigger: true
-      
+   - pipeline: Test2
+     source: oct23
+     project: oct23
+
+trigger:
+- master
+
 stages:
  - stage: ProduceArtifact
    jobs:
-     - job: J4
+     - job: J8
        pool: 
         name: Default
        steps:
-         - download: P1
-           artifact: A1.1
+         - download: Test2
+          #  artifact: A1.1
          - task: PublishBuildArtifacts@1
            inputs:
             PathtoPublish: 'artifact3'
