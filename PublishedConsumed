@@ -4,15 +4,26 @@ resources:
      source: Arsasana.Test2
      project: oct24
      trigger: true
-
-
-
+ containers:
+   - container: ACRResourceLatest
+     type: ACR
+     azureSubscription: ARM_Manual
+     resourceGroup: RMDev
+     registry: abhisheaAcr
+     repository: conrepo11
 stages:
+ - stage: stage1
+    jobs:
+    - job: download_specific_artifact1
+      displayName: download specific artifact1
+      pool:
+        name: Default
+
  - stage: ProduceAndConsumeArtifact
    jobs:
     - job: J1
       pool:
-       name: default
+       name: Default
       steps:
        - task: PublishBuildArtifacts@1
          inputs:
