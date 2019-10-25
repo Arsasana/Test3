@@ -1,1 +1,26 @@
+resources:
+ pipelines:
+   - pipeline: Test2
+     source: Arsasana.Test2
+     project: oct24
+     trigger: true
 
+
+
+stages:
+ - stage: ProduceAndConsumeArtifact
+   jobs:
+    - job: J1
+      pool:
+       name: default
+      steps:
+       - task: PublishBuildArtifacts@1
+         inputs:
+          PathtoPublish: 'artifact3'
+          ArtifactName: 'A3'
+     - job: J8
+       pool: 
+        name: Default
+       steps:
+         - download: Test2
+      
