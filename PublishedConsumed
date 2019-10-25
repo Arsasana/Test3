@@ -12,14 +12,14 @@ resources:
      registry: abhisheaAcr
      repository: conrepo11
 stages:
- - stage: stage1
+ - stage: ConsumedContainer
     jobs:
     - job: download_specific_artifact1
       displayName: download specific artifact1
       pool:
         name: Default
 
- - stage: ProduceAndConsumeArtifact
+ - stage: ProduceAndConsumePipelineArtifact
    jobs:
     - job: J1
       pool:
