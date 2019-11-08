@@ -1,0 +1,49 @@
+resources:
+ pipelines:
+   - pipeline: Test2
+     source: Arsasana.Test2
+     trigger: true
+ containers:
+   - container: ACRResourceLatest
+     type: ACR
+     azureSubscription: Azure_Automatic_Connection
+     resourceGroup: ansheno
+     registry: ansheno
+     repository: ajinkyadockertest
+stages:
+ - stage: ConsumedContainer
+   jobs:
+    - job: download_specific_artifact1
+      displayName: download specific artifact1
+      pool:
+        name: Default
+    - job: J9
+      pool: 
+       name: Default
+      steps:
+        - download: Test2
+
+ - stage: ProduceAndConsumePipelineArtifact
+   jobs:
+    - job: J1
+      pool:
+       name: Default
+      steps:
+       - task: PublishBuildArtifacts@1
+         inputs:
+          PathtoPublish: 'artifact3'
+          ArtifactName: 'A3'
+    - job: J8
+      pool: 
+       name: Default
+      steps:
+        - download: Test2
+    - job: J10
+      pool: 
+       name: Default
+      steps:
+        - download: Test2
+    - job: download_specific_artifact1
+      displayName: download specific artifact1
+      pool:
+        name: Default
