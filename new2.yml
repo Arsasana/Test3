@@ -1,6 +1,7 @@
 resources:
  pipelines:
    - pipeline: Test2
+     project: gykuma
      source: Arsasana.Test2
      trigger: true
  containers:
