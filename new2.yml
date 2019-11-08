@@ -1,7 +1,7 @@
 resources:
  pipelines:
    - pipeline: Test2
-     project: gykuma
+     project: AMJA_Project
      source: Arsasana.Test2
      trigger: true
  containers:
