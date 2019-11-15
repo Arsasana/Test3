@@ -1,16 +1,14 @@
 resources:
  pipelines:
    - pipeline: Test2
-     project: AMJA_Project
      source: Arsasana.Test2
-     trigger: true
  containers:
-   - container: ContainerRepo
-     type: ACR
-     azureSubscription: DockerConnection
-     resourceGroup: ansheno
-     registry: ansheno
-     repository: ajinkyadockertest
+    - container: ACRResourceLatest2
+      type: ACR
+      azureSubscription: ARM_Connection
+      resourceGroup: RMINT
+      registry: ansheno
+      repository: containerrepo
 stages:
  - stage: ConsumedContainer
    jobs:
