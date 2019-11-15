@@ -1,9 +1,15 @@
 resources:
+ containers:
+  - container: ACRResourceLatest2
+    type: ACR
+    azureSubscription: ARM_Connection
+    resourceGroup: RMINT
+    registry: ansheno
+    repository: containerrepo
  pipelines:
    - pipeline: CIPipeline
-     source: Test2
-     project: oct30
-     trigger: true
+     source: Arsasana.Test2
+
 
 trigger: none
 
