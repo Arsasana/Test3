@@ -7,6 +7,12 @@ resources:
  containers:
    - container: ACRResourceLatest
      type: ACR
+     azureSubscription: ARM_Manual
+     resourceGroup: RMDev
+     registry: abhisheaAcr
+     repository: conrepo11
+   - container: ACRResourceLatest
+     type: ACR
      azureSubscription: Azure_Automatic_Connection
      resourceGroup: ansheno
      registry: ansheno
