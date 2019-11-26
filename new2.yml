@@ -11,6 +11,7 @@ resources:
      resourceGroup: RMDev
      registry: abhisheaAcr
      repository: conrepo11
+     
    - container: ACRResourceLatest
      type: ACR
      azureSubscription: Azure_Automatic_Connection
