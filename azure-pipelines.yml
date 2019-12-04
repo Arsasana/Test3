@@ -5,7 +5,7 @@ resources:
  containers:
     - container: ACRResourceLatest2
       type: ACR
-      azureSubscription: ARM_Connection
+      azureSubscription: ARM_Automatic
       resourceGroup: RMINT
       registry: ansheno
       repository: containerrepo
