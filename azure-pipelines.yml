@@ -15,10 +15,10 @@ stages:
     - job: download_specific_artifact1
       displayName: download specific artifact1
       pool:
-        name: Default
+        vmImage: 'ubuntu-latest'
     - job: J9
       pool: 
-       name: Default
+       vmImage: 'ubuntu-latest'
       steps:
         - download: Test2
 
@@ -26,7 +26,7 @@ stages:
    jobs:
     - job: J1
       pool:
-       name: Default
+       vmImage: 'ubuntu-latest'
       steps:
        - task: PublishBuildArtifacts@1
          inputs:
@@ -34,15 +34,15 @@ stages:
           ArtifactName: 'A3'
     - job: J8
       pool: 
-       name: Default
+       vmImage: 'ubuntu-latest'
       steps:
         - download: Test2
     - job: J10
       pool: 
-       name: Default
+       vmImage: 'ubuntu-latest'
       steps:
         - download: Test2
     - job: download_specific_artifact1
       displayName: download specific artifact1
       pool:
-        name: Default
+        vmImage: 'ubuntu-latest'
