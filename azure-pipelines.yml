@@ -3,6 +3,14 @@ resources:
    - pipeline: Test2
      source: Arsasana.Test2
  containers:
+    - container: ACRResource
+      type: ACR
+      azureSubscription: azrm
+      resourceGroup: ansheno
+      registry: ansheno
+      repository: ansheno
+      trigger: true
+
     - container: ACRResourceLatest2
       type: ACR
       azureSubscription: ARM_Automatic
