@@ -1,40 +1,41 @@
 resources:
  pipelines:
    - pipeline: Test2
-     source: Arsasana.Test2
- containers:
-    - container: ACRResource
-      type: ACR
-      azureSubscription: azrm
-      resourceGroup: ansheno
-      registry: ansheno
-      repository: ansheno
-      trigger: true
+     source: Arsasana.Test2(1)
+#  containers:
+#     - container: ACRResource
+#       type: ACR
+#       azureSubscription: azrm
+#       resourceGroup: ansheno
+#       registry: ansheno
+#       repository: ansheno
+#       trigger: true
 
-    - container: ACRResourceLatest2
-      type: ACR
-      azureSubscription: ARM_Automatic
-      resourceGroup: RMINT
-      registry: ansheno
-      repository: containerrepo
+    # - container: ACRResourceLatest2
+    #   type: ACR
+    #   azureSubscription: ARM_Automatic
+    #   resourceGroup: RMINT
+    #   registry: ansheno
+    #   repository: containerrepo
 stages:
- - stage: ConsumedContainer
-   jobs:
-    - job: download_specific_artifact1
-      displayName: download specific artifact1
-      pool:
-        vmImage: 'ubuntu-latest'
-    - job: J9
-      pool: 
-       vmImage: 'ubuntu-latest'
-      steps:
-        - download: Test2
+#  - stage: ConsumedContainer
+#    jobs:
+#     - job: download_specific_artifact1
+#       displayName: download specific artifact1
+#       pool:
+#         vmImage: 'ubuntu-latest'
+#     - job: J9
+#       pool: 
+#        vmImage: 'ubuntu-latest'
+#       steps:
+#         - download: Test2
 
  - stage: ProduceAndConsumePipelineArtifact
    jobs:
     - job: J1
       pool:
-       vmImage: 'ubuntu-latest'
+        name : 'Default'
+      #  vmImage: 'ubuntu-latest'
       steps:
        - task: PublishBuildArtifacts@1
          inputs:
@@ -42,15 +43,16 @@ stages:
           ArtifactName: 'A3'
     - job: J8
       pool: 
-       vmImage: 'ubuntu-latest'
+        name : 'Default'
+      #  vmImage: 'ubuntu-latest'
       steps:
         - download: Test2
-    - job: J10
-      pool: 
-       vmImage: 'ubuntu-latest'
-      steps:
-        - download: Test2
-    - job: download_specific_artifact1
-      displayName: download specific artifact1
-      pool:
-        vmImage: 'ubuntu-latest'
+    # - job: J10
+    #   pool: 
+    #    vmImage: 'ubuntu-latest'
+    #   steps:
+    #     - download: Test2
+    # - job: download_specific_artifact1
+    #   displayName: download specific artifact1
+    #   pool:
+    #     vmImage: 'ubuntu-latest'
