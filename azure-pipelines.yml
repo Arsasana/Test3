@@ -41,7 +41,7 @@ stages:
          inputs:
           PathtoPublish: 'artifact3'
           ArtifactName: 'A3'
-    - job: J8
+    - job: Job8
       pool: 
         name : 'Default'
       #  vmImage: 'ubuntu-latest'
