@@ -46,7 +46,7 @@ stages:
         name : 'Default'
       #  vmImage: 'ubuntu-latest'
       steps:
-        - download: Test2
+        - download: CIPipeline
     # - job: J10
     #   pool: 
     #    vmImage: 'ubuntu-latest'
