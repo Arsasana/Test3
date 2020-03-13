@@ -2,6 +2,7 @@ resources:
  pipelines:
    - pipeline: CIPipeline
      source: Arsasana.Test2
+     tags: test
 #  containers:
 #     - container: ACRResource
 #       type: ACR
